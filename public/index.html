@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💪 Exercise Tracker</h1>
+            <p>Track your workouts and progress</p>
+        </header>
+
+        <!-- Loading indicator -->
+        <div id="loading" class="loading">Loading exercises...</div>
+
+        <!-- Error display -->
+        <div id="error" class="error" style="display: none;"></div>
+
+        <!-- Available Exercises Section -->
+        <section class="exercises-section">
+            <h2>Available Exercises</h2>
+            <div class="filter-bar">
+                <select id="category-filter">
+                    <option value="">All Categories</option>
+                    <option value="Bodyweight">Bodyweight</option>
+                    <option value="Strength">Strength</option>
+                    <option value="Core">Core</option>
+                    <option value="Cardio">Cardio</option>
+                </select>
+                <input type="text" id="exercise-search" placeholder="Search exercises...">
+            </div>
+            <div id="exercises-list" class="exercises-grid"></div>
+        </section>
+
+        <!-- Create Workout Section -->
+        <section class="workout-section">
+            <h2>Create New Workout</h2>
+            <form id="workout-form" class="workout-form">
+                <div class="form-group">
+                    <input type="text" id="workout-name" placeholder="Workout name (e.g., 'Monday Chest Day')" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="workout-notes" placeholder="Workout notes (optional)"></textarea>
+                </div>
+                
+                <div id="selected-exercises" class="selected-exercises">
+                    <h3>Selected Exercises</h3>
+                    <p class="placeholder">No exercises selected yet. Add some from the list above!</p>
+                </div>
+
+                <button type="submit" id="create-workout-btn" disabled>Create Workout</button>
+            </form>
+        </section>
+
+        <!-- Recent Workouts Section -->
+        <section class="workouts-section">
+            <h2>Recent Workouts</h2>
+            <div id="workouts-list" class="workouts-list"></div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
